@@ -1,0 +1,1 @@
+Following turorials: https://www.youtube.com/watch?v=ESkD6Ouvs2s, https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma

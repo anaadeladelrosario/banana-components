@@ -1,12 +1,12 @@
 import "./button.css"
 
 type ButtonProps= Readonly<{
-    children: string,
+    text: string| undefined,
     onClick: () => void
 }>;
 
 export const Button = (props: ButtonProps) => {
     return (
-        <button onClick={props.onClick}>{props.children}</button>
+        <button onClick={props.onClick}>{props.text}</button>
     )
 }
