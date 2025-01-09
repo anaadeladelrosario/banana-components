@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../Button/Button';
-import './Tile.css';
+import './tile.css';
 
 interface TileProps {
   image?: string;
