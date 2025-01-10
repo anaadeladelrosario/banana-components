@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import { Button } from './Button';
 
@@ -10,12 +11,12 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: { text: { control: 'text' } },
-  args: {text: 'Primary Button' , onClick: () => console.log('clicked')},
+  args: { text: 'Primary Button', type: "button", onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {text: 'Secondary Button' },
+  args: { text: 'Secondary Button' },
 };

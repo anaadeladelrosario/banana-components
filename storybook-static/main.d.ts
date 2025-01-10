@@ -6,6 +6,7 @@ export declare const Button: (props: ButtonProps) => JSX_2.Element;
 declare type ButtonProps = Readonly<{
     text: string | undefined;
     onClick: () => void;
+    type: "button" | "submit" | undefined;
 }>;
 
 export declare function Tile({ image, title, description, onClick, style, children, }: TileProps): JSX_2.Element;
