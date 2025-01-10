@@ -58,5 +58,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "styled-components": "^6.1.14"
   }
 }

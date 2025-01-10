@@ -7,17 +7,14 @@ declare type ButtonProps = Readonly<{
     text: string | undefined;
     onClick: () => void;
     type: "button" | "submit" | undefined;
+    primary?: boolean;
 }>;
 
-export declare function Tile({ image, title, description, onClick, style, children, }: TileProps): JSX_2.Element;
+export declare function Tile({ title, onClick, style, children, }: TileProps): JSX_2.Element;
 
 declare interface TileProps {
-    image?: string;
     title?: string;
-    description?: string;
     onClick: () => void;
-    buttonText?: string;
-    onButtonClick?: () => void;
     style?: default_2.CSSProperties;
     children?: default_2.ReactNode;
 }
