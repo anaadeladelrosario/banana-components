@@ -1,24 +1,38 @@
 import React from 'react';
-import './tile.css';
+import '../../styles/tokens.css';
+import styled from 'styled-components';
 
 interface TileProps {
-  image?: string;
   title?: string;
-  description?: string;
   onClick: () => void;
-  buttonText?: string;
-  onButtonClick?: () => void;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
-export function Tile({ image, title, description, onClick,style, children, }: TileProps) {
+export function Tile({ title, onClick,style, children, }: TileProps) {
   return (
-    <div className="tile" style={style} onClick={onClick}>
-      {image && <img src={image} alt={title} />}
+    <TileStyled className="tile" style={style} onClick={onClick}>
       <h3 >{title}</h3>
-      <p >{description}</p>
       {children}
-    </div>
+    </TileStyled>
   );
 }
+
+const TileStyled = styled.div<{className:string}>`
+  background-color: var(--color-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 12px 0;
+  font-size: var(--font-size-lg);
+  margin: 0 auto;
+  font-weight: 600;
+  margin-bottom: 12px;
+&:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+`;
