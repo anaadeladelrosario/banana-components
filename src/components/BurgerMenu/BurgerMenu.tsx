@@ -1,5 +1,5 @@
 import React from "react";
-import "./BurgerMenu.css";
+import "./burgerMenu.css";
 
 export interface BurgerMenuProps {
   onMenuToggle?: (isOpen: boolean) => void;
