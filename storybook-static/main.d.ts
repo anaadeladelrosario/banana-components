@@ -18,15 +18,78 @@ declare type ButtonProps = Readonly<{
     primary?: boolean;
 }>;
 
-export declare const Header: ({ title, user, onSearch }: HeaderProps) => JSX_2.Element;
+export declare const Checkbox: default_2.FC<CheckboxGroupProps>;
+
+declare interface CheckboxGroupProps {
+    options: {
+        label: string;
+        value: string;
+    }[];
+    name: string;
+    selectedValue: string;
+    onChange: (event: default_2.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export declare const Header: ({ title, logo, user, onSearch, children }: HeaderProps) => JSX_2.Element;
 
 declare interface HeaderProps {
     title: string;
+    logo?: string;
     user?: User;
     onSearch?: (query: string) => void;
+    children?: React.ReactNode;
 }
 
+export declare const Input: default_2.FC<InputProps>;
+
+declare interface InputProps {
+    type: InputType;
+    label: string;
+    name: string;
+    placeholder?: string;
+    required?: boolean;
+    options?: {
+        label: string;
+        value: string;
+    }[];
+    error?: string;
+    disabled?: boolean;
+    min?: number;
+    max?: number;
+}
+
+declare type InputType = 'text' | 'number' | 'textarea' | 'select' | "RADIO" | "CHECKBOX";
+
 export declare const Logo: React.FC;
+
+export declare const Menu: ({ items, style, isOpen }: MenuProps) => JSX_2.Element;
+
+export declare const MenuItem: default_2.FC<MenuItemProps>;
+
+declare interface MenuItemProps {
+    label: string;
+    icon?: default_2.ComponentType<default_2.SVGProps<SVGSVGElement>> | null;
+    subItems?: MenuItemProps[];
+    onItemClick?: () => void;
+}
+
+declare interface MenuProps {
+    items?: MenuItemProps[];
+    style?: React.CSSProperties;
+    isOpen: boolean;
+}
+
+export declare const RadioButton: default_2.FC<RadioButtonGroupProps>;
+
+declare interface RadioButtonGroupProps {
+    options: {
+        label: string;
+        value: string;
+    }[];
+    name: string;
+    selectedValue: string;
+    onChange: (event: default_2.ChangeEvent<HTMLInputElement>) => void;
+}
 
 export declare function Tile({ title, onClick, style, children, }: TileProps): JSX_2.Element;
 

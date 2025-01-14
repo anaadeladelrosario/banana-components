@@ -1,12 +1,13 @@
 import { Menu } from './Menu';
-import user from '../../../public/assets/user.svg'
+import { action } from '@storybook/addon-actions';
+import { fn } from '@storybook/test';
 
 // Sample menu items
 const defaultMenuItems = [
   {
     label: 'Categories',
-    items: [
-      { label: 'Main Dishes', icon: user },
+    subItems: [
+      { label: 'Main Dishes'},
       { label: 'Bread & Pastries'},
     ],
   },
@@ -22,7 +23,11 @@ export default {
   argTypes: {
     title: { control: 'text' },
     items: { control: 'object', defaultValue: defaultMenuItems},
+    onItemClick:  action('on-click'),
   },
+  args:{
+    onItemClick: fn(),
+  }
 }
 
 
@@ -43,12 +48,5 @@ export const MenuWithNestedMenuItems = {
   args: {
     title: 'Menu with nested items',
     items: defaultMenuItems,
-  },
-};
-
-export const MenuWithNoTitle = {
-  args: {
-    title: '',
-    items: defaultMenuItems
   },
 };

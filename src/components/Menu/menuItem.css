@@ -12,10 +12,9 @@
     gap: 0.5rem;
     padding: 0.5rem;
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-hover);
     cursor: pointer;
     padding: 10px 15px;
-    width: fit-content;
 }
 
 .menu-item:hover .menu-item-label {
@@ -31,7 +30,7 @@
 .menu-item-icon {
     width: 20px;
     height: 20px;
-    color: var(--color-accent);
+    color: var(--color-primary);
 }
 
 /* Creates an empty space when no icon is present
@@ -66,7 +65,7 @@
 }
 
 .menu-item:hover .menu-item-icon {
-    fill: #e57373;
+    color: #e57373;
 }
 
 .menu-item-arrow {
@@ -99,11 +98,6 @@
     /* Hides scrollbar for Webkit browsers (Chrome, Safari) */
 }
 
-.desktop {
-    position: absolute;
-    z-index: 1;
-}
-
 .submenu-item {
     color: #666;
     text-decoration: none;
@@ -115,14 +109,4 @@
 
 .submenu-item:hover {
     color: #e57373;
-}
-
-@media (min-width:1024px) {
-
-
-    .submenu-item {
-        background-color: #9AC1AE;
-        flex-direction: row;
-
-    }
 }

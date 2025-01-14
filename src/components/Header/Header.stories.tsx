@@ -1,5 +1,6 @@
 import { Header } from './Header';
-import user from '../../../public/assets/user.svg';
+import user from '../../assets/user.svg';
+import logo from '../../assets/banana.png'
 
 export default {
   title: 'Components/Header',
@@ -8,17 +9,26 @@ export default {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
+  argTypes:{title: {control:'text', logo:{control:'text'}, onSearch:{control:'boolean', defaultValue: true}, }}
 };
 
-export const Default = {
+export const DefaultLogo = {
   args: {
-    title: 'S.E.G. Recipe Collection',
+    logo:logo,
+    title: 'Banana Components',
+  },
+};
+
+export const WithSearchBar = {
+  args: {
+    title: 'Banana Components',
+    onSearch: true,
   },
 };
 
 export const WithUser = {
   args: {
-    title: 'S.E.G. Recipe Collection',
+    title: 'Banana Components',
     user: {
       name: 'Ana',
       avatar: user, // Example avatar URL
