@@ -15,7 +15,7 @@ const handleItemClick = (item: MenuItemProps[], index: number) => {
 
 export const Menu = ({ items, style, isOpen }: MenuProps) => {
   return (
-    <MenuDiv  className={`menu-content${isOpen ? "-open": ""}`} style={style}>
+    <MenuDiv className={`menu-content${isOpen ? "-open": ""}`} style={style}>
       <ul className="menu-list">
         {items ? (
           items.map((item) => (

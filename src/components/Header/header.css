@@ -2,7 +2,7 @@
 
 .responsive-header {
     background-color: var(--color-text-secondary);
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 0rem;
     width: 100%;
     box-shadow: var(--shadow-sm);
 }
@@ -16,12 +16,6 @@
     gap: 1rem;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
 .header-title {
     margin: 0;
     font-size: 1.5rem;
@@ -31,6 +25,19 @@
 .header-center {
     flex-grow: 1;
     max-width: 600px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: 1rem;
 }
 
 .search-form {

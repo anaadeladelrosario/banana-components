@@ -1,6 +1,8 @@
 import { default as default_2 } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 
+export declare const ApplicationLayer: () => JSX_2.Element;
+
 export declare const BurgerMenu: default_2.FC<BurgerMenuProps>;
 
 declare interface BurgerMenuProps {
@@ -30,12 +32,13 @@ declare interface CheckboxGroupProps {
     onChange: (event: default_2.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export declare const Header: ({ title, logo, user, onSearch, children }: HeaderProps) => JSX_2.Element;
+export declare const Header: ({ title, logo, user, isSearch, onSearch, children }: HeaderProps) => JSX_2.Element;
 
 declare interface HeaderProps {
     title: string;
     logo?: string;
     user?: User;
+    isSearch?: boolean;
     onSearch?: (query: string) => void;
     children?: React.ReactNode;
 }
@@ -78,6 +81,10 @@ declare interface MenuProps {
     style?: React.CSSProperties;
     isOpen: boolean;
 }
+
+export declare const Navigation: ({ menuItems }: {
+    menuItems: MenuItemProps[];
+}) => JSX_2.Element;
 
 export declare const RadioButton: default_2.FC<RadioButtonGroupProps>;
 

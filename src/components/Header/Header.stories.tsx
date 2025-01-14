@@ -22,7 +22,7 @@ export const DefaultLogo = {
 export const WithSearchBar = {
   args: {
     title: 'Banana Components',
-    onSearch: true,
+    isSearch: true,
   },
 };
 
