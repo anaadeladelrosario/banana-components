@@ -21,7 +21,7 @@
     "sb": "storybook build",
     "deploy": "gh-pages -d storybook-static"
   },
-  "homepage": "http://anaadeladelrosario.github.io/banana-components",
+  "homepage": "http://anaadeladelrosario.github.io/banana-components/",
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
