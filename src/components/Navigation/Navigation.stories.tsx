@@ -1,14 +1,14 @@
-import { BurgerMenu } from './BurgerMenu';
-import { action } from '@storybook/addon-actions';
+import {Navigation} from './Navigation';
+import { MenuItemProps } from '../../components/Menu/MenuItem';
 import { fn } from '@storybook/test';
 
 // Sample menu items
-const defaultMenuItems = [
+const defaultMenuItems: MenuItemProps[]  = [
   { label: 'Home' },
   {
     label: 'Categories',
     subItems: [
-      { label: 'Main Dishes' },
+      { label: 'Main Dishes'},
       { label: 'Bread & Pastries'},
       { 
         label: 'Desserts',
@@ -32,29 +32,30 @@ const defaultMenuItems = [
   { label: 'Settings' },
 ];
 
-
-
 export default {
-  title: 'Components/BurgerMenuIcon',
-  component: BurgerMenu,
+  title: 'Components/ResponsiveNavigationMenu',
+  component: Navigation,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    onMenuToggle: { action: 'menuToggled' },
-    menuItems: { control: 'object', defaultValue: defaultMenuItems},
-    onClick: action('on-click'),
+  argTypes: { 
   },
-  args: { onClick: fn() },
+  args: {  onItemClick: fn(), },
 }
 
-export const BurgerMenuIcon ={
+export const SimpleMenu ={
   args: {
     menuItems: [
       { label: 'Home' },
       { label: 'About',},
       { label: 'Contact'},
     ],
+  },
+};
+
+export const NestedMenu ={
+  args: {
+    menuItems: defaultMenuItems,
   },
 };

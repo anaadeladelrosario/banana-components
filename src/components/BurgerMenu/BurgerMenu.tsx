@@ -9,6 +9,8 @@ export interface BurgerMenuProps {
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClick, style }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+
   return (
     <div className={isOpen ? "burger-menu open" : "burger-menu"} style={style}>
       <button
@@ -24,3 +26,4 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClick, style }) => {
     </div>
   );
 };
+

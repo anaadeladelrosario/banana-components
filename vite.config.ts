@@ -5,15 +5,18 @@ import { glob } from 'glob'
 import { fileURLToPath } from 'url';
 import dts from 'vite-plugin-dts'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import ViteInspect from 'vite-plugin-inspect';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [ViteInspect(), react(), dts({
-    include: ['src'],
-    rollupTypes: true,
-    tsconfigPath: "./tsconfig.app.json",
-  }), libInjectCss()],
+  plugins: [
+    react(),
+    dts({
+      include: ['src'],
+      rollupTypes: true,
+      tsconfigPath: "./tsconfig.app.json",
+    }),
+    libInjectCss(),
+  ],
   build: {
     chunkSizeWarningLimit: 1000,  // Set the limit to 1 MB
     copyPublicDir: true,

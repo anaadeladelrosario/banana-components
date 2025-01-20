@@ -9,6 +9,7 @@ export interface MenuItemProps {
     onItemClick?: () => void;
   }
 
+
 export const MenuItem: React.FC<MenuItemProps> = ({ label="Text", icon, subItems=[], onItemClick }) => {
     const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
 
@@ -29,7 +30,8 @@ const toggleSubMenu = (label: string) => {
     const paddingLeft = `${depth * 1}rem`;
     
     return(
-    <>
+    <> {subItems.length > 0 ? (
+      <>
         <div key={uuidv4()}
           className="menu-item"
           onClick={() => toggleSubMenu(label)}
@@ -44,17 +46,27 @@ const toggleSubMenu = (label: string) => {
         </div>
         <div className={`submenu ${isSubMenuOpen ? 'open' : ''}`}>
           {subItems?.map(subItem => renderMenuItemWithSubItems(subItem.label, subItem.subItems|| [], depth + 1))}
-        </div>
+        </div> </>):(
+         <div 
+         className="menu-item" onClick={onItemClick}
+       >
+         {IconComponent && <IconComponent className="menu-item-icon" />}
+         <span className="menu-item-label">{label}</span>
+       </div>
+        )
+       }
       </>
       )}
 
   return (
-    <div key={label} onClick={onItemClick}>
+    <div key={uuidv4()} onClick={onItemClick}>
          {hasSubItems ? (
          renderMenuItemWithSubItems(label, subItems, 0)
          ):(
+         
        <div 
             className="menu-item"
+            onClick={onItemClick}
           >
             {IconComponent && <IconComponent className="menu-item-icon" />}
             <span className="menu-item-label">{label}</span>
