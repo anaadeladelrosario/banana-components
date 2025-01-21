@@ -31,8 +31,4 @@ const TileStyled = styled.div<{className:string}>`
   margin: 0 auto;
   font-weight: 600;
   margin-bottom: 12px;
-&:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
 `;
