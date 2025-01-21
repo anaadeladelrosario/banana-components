@@ -2,19 +2,27 @@ import { MenuItem, MenuItemProps } from "./MenuItem";
 import "./menu.css";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { useState } from "react";
 
 export interface MenuProps {
   items?: MenuItemProps[];
   style?: React.CSSProperties;
-  isOpen: boolean;
 }
 
 const handleItemClick = (item: MenuItemProps[], index: number) => {
   console.log(`Item clicked: ${item[index].label}`);
 };
 
-export const Menu = ({ items, style, isOpen }: MenuProps) => {
+export const Menu = ({ items, style }: MenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+};
   return (
+    <>
+    <BurgerMenu onClick={toggleMenu} />
     <MenuDiv className={`menu-content${isOpen ? "-open": ""}`} style={style}>
       <ul className="menu-list">
         {items ? (
@@ -31,6 +39,7 @@ export const Menu = ({ items, style, isOpen }: MenuProps) => {
         )}
       </ul>
     </MenuDiv>
+    </>
   );
 };
 
@@ -42,6 +51,16 @@ const MenuDiv = styled.div`
 
   @media (min-width: 1024px) {
     display: block; // Always show on desktop
+  }
+  @media (max-width: 1024px) {
+   position: absolute; 
+   top: var(--spacing-md);
+   left: var(--spacing-md);
+   padding: var(--spacing-lg);
+   padding-top: var(--spacing-xl);
+   background-color: var(--color-background);
+   border: 1px solid var(--color-text-secondary);
+   box-shadow: var(--shadow-sm);
   }
 `;
 

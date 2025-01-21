@@ -31,11 +31,11 @@ const toggleSubMenu = (label: string) => {
     
     return(
     <> {subItems.length > 0 ? (
-      <>
+      <div>
         <div key={uuidv4()}
           className="menu-item"
           onClick={() => toggleSubMenu(label)}
-          style={{ paddingLeft }}
+          style={{ paddingLeft, position: 'relative' }}
         >
           {IconComponent && <IconComponent className="menu-item-icon" />}
           <span className="menu-item-label">{label}</span>
@@ -46,7 +46,7 @@ const toggleSubMenu = (label: string) => {
         </div>
         <div className={`submenu ${isSubMenuOpen ? 'open' : ''}`}>
           {subItems?.map(subItem => renderMenuItemWithSubItems(subItem.label, subItem.subItems|| [], depth + 1))}
-        </div> </>):(
+        </div> </div>):(
          <div 
          className="menu-item" onClick={onItemClick}
        >

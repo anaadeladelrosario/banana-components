@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './header.css';
 import { Navigation } from '../Navigation/Navigation';
+import { defaultMenuItems } from '../Menu/Menu.stories';
 
 
 export interface User {
@@ -30,11 +31,7 @@ export const Header = ({ title, logo, user, isSearch, onSearch, children }: Head
       <div className="header-container">
         {/* Left section */}
         <div className="header-left">
-          <Navigation menuItems={[
-     { label: "one"  },
-     { label: "two" }, 
-     { label: "three"}
-   ]}/>
+          <Navigation menuItems={defaultMenuItems}/>
           {logo && (<img style={{width: '34px', height: '34px', padding: '10px'}} alt="logo" src={logo}/>)}
           {title && (<h1 className="header-title">{title}</h1>)}
         </div>

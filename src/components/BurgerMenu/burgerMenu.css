@@ -18,6 +18,7 @@
         position: fixed;
         top: var(--spacing-md);
         left: var(--spacing-md);
+        margin: var(--spacing-md);
         display: flex;
         flex-direction: column;
         justify-content: space-around;

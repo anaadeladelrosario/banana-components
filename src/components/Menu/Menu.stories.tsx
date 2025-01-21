@@ -3,13 +3,29 @@ import { action } from '@storybook/addon-actions';
 import { fn } from '@storybook/test';
 
 // Sample menu items
-const defaultMenuItems = [
+export const defaultMenuItems = [
+  {
+    label: 'Home'},
   {
     label: 'Categories',
     subItems: [
       { label: 'Main Dishes'},
       { label: 'Bread & Pastries'},
     ],
+  },
+  {
+    label: 'Countries',
+    subItems: [
+      { label: 'Australia'},
+      { label: 'Cuba'},
+      { label: 'Sweden'},
+    ],
+  },
+  {
+    label: 'Favorites',
+  },
+  {
+    label: 'Settings',
   },
 ];
 
